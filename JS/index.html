@@ -6,6 +6,73 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="'main.js"></script>
+    ชื่อ: <input 
+    id="fname"
+    class="input"
+    type ="text"
+    name="fname"
+    value="ชื่อทดสอบ">
+    นามสกุล: <input
+    id="lname"
+    type="text"
+    class="input"
+    name="lname"
+    value="นามสกุลทดสอบ"
+    เบอร์โทร: <input
+    id="phone"
+    class="input"
+    type="text"
+    name="phone"
+    value="0123456789"
+
+    <script >
+        <button onclick="userClick()">Click Me</button>
+        <div>onclick="divClick()">click div</div>
+        <script>
+            function userClick(){
+                console.log("Button was clicked!");
+            }
+            function divClick(){
+                console.log("Div was clicked!");
+            }
+        </script>
+        //
+        <input type="radio" name="gender" value="male" onchange="changeGender()">male
+        <input type="radio" name="gender" value="female"onchange="changegender()">female
+        <scirpt>
+            function changeGender(){
+                // เลือก gender ทั้งหมด
+                let gendders = document.querySelectorAll('input[name="gender"]');
+
+
+                // ดูว่าอันไหนมัน check
+                for (let i = 0; i < genders.length; i++){
+                    if (gender[i].checked){
+                        console.log("Gender selected: " + gender[i].value);
+                    }
+                }
+            }
+        </scirpt>
+        let fnameInput = document.getElementById('fname');
+        console.log(fnameInput.value);
+        let lnameInput = document.getElementById('lname');
+        console.log(lnameInput.value);
+        //
+        งานอดิเรก:
+        <input type = "checkbox" name="fname" value="ฟุตบอล">ฟุตบอล
+        <input type = "checkbox" name="fname" value="บาสเกตบอล"บาสเกตบอล
+        <input type = "checkbox" name="fname" value="ว่ายน้ำ">ว่ายน้ำ
+        <script>
+            let checkboxs = document.querySelectorAll('input[type="checkbox"]');
+            console.log(checkboxs);
+         for (let i = 0; i , checkboxs.length; i++){
+            console.log(checkboxs[i].value);
+         }
+        let input = document.querySelector('input[name="fname"]');
+        console.log(inputs.value);
+        for(let i = 0; i < inputs.length; i++){
+            console.log(input[i].value);
+        }
+    </script>
 </body>
 </html>
