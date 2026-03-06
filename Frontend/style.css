@@ -1,109 +1,112 @@
-/* ตั้งค่าพื้นฐาน */
+/* 1. ดึง Font จากโฟลเดอร์ Kanit ที่อยู่ด้านนอก */
+@font-face {
+    font-family: 'Kanit';
+    /* ../ หมายถึงถอยออกจากโฟลเดอร์ Frontend 1 ชั้น */
+    src: url('../Kanit/Kanit-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../Kanit/Kanit-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* 2. ตั้งค่าพื้นฐานและ Layout */
 * {
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Kanit', sans-serif;
 }
 
 body {
-    background-color: #f4f7f6;
+    background-color: #f5f7fa;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    margin: 0;
 }
 
-/* กล่องคอนเทนเนอร์หลัก */
+/* 3. ตกแต่งฟอร์มให้ดูดี */
 .container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
 }
 
-/* หัวข้อ Register Form */
 .header {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     color: #333;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
 }
 
-/* การจัดวางแบบ Flex (ใช้สำหรับแถว input) */
 .flex {
     display: flex;
-    gap: 15px;
     align-items: center;
+    gap: 10px;
 }
 
 .form-input {
     margin-bottom: 15px;
 }
 
-/* หัวข้อของแต่ละช่องกรอก */
 .header-form {
     min-width: 80px;
-    font-weight: 600;
-    color: #555;
+    font-weight: 500;
 }
 
-/* ปรับแต่ง Input และ Textarea */
 .form, textarea {
-    width: 100%;
-    padding: 10px;
+    flex: 1;
+    padding: 8px 12px;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-.form:focus, textarea:focus {
-    border-color: #4CAF50;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
 textarea {
+    width: 100%;
     height: 80px;
-    resize: vertical;
     margin-top: 5px;
-}
-
-/* ปรับแต่งส่วนเลือกเพศและงานอดิเรก */
-.gender .flex {
-    gap: 20px;
-}
-
-.form-input > div {
-    margin-top: 5px;
-}
-
-/* ปุ่มกด */
-.center {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
 }
 
 .button {
+    width: 100%;
+    padding: 10px;
     background-color: #4CAF50;
     color: white;
-    padding: 12px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
-    width: 100%;
+    margin-top: 10px;
+    transition: 0.3s;
 }
 
 .button:hover {
     background-color: #45a049;
 }
 
-.button:active {
-    transform: scale(0.98);
+.message {
+    background-color: lightgray;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display:none;
+    
+}
+.message.success {
+    background-color: #d4edda;
+    display: block;
+}
+
+.message.danger {
+    background-color: #f8d7da;
+    display: block;
 }
